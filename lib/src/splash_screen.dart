@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'game_screen.dart';
+import 'level_selection_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -16,7 +16,9 @@ class _SplashScreenState extends State<SplashScreen> {
       const Duration(milliseconds: 3000),
       () => Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => MemoriaGame()),
+        MaterialPageRoute(
+            builder: (context) =>
+                const LevelSelectionScreen()), 
       ),
     );
   }
@@ -30,9 +32,9 @@ class _SplashScreenState extends State<SplashScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Image.asset('assets/logo.jpg',
+            Image.asset('assets/logo.jpeg',
                 height:
-                    150), // Asegúrate de tener esta imagen en tu carpeta de assets
+                    150), 
             const SizedBox(height: 50),
             const CircularProgressIndicator(),
           ],
